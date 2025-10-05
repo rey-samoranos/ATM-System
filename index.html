@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <title>ATM Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans';
+    }
+    .header {
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      border-bottom: 2px solid #ddd;
+    }
+    .logo {
+      font-size: 60px;
+      font-weight: bold;
+      color: #FC5E02;
+    }
+    .logo span {
+      color: #FC5E02; 
+      width: 305px;
+      height: 89px;
+      top: 40px;
+      left: 53px;
+      opacity: 1;
+    }
+    .logo img {
+      width: 100px; 
+      height: 69px; 
+      top: 50px; 
+      left: 330px; 
+      color: #124191;
+      vertical-align: middle;
+    }
+    .customer-service {
+      font-size: 20px;
+      color: #003366;
+      text-align: right;
+    }
+
+    .content {
+      background-color: #003d99; /* deep blue */
+      color: white;
+      height: calc(100vh - 50px);
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .content h1 {
+      margin: 0;
+    }
+
+    .content h1 span {
+      font-size: 80px;
+    }
+
+    .content p {
+      font-size: 18px;
+      margin: 10px 0 30px 0;
+    }
+
+    .btn {
+      background-color: white;
+      color: #003366;
+      font-size: 18px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <span style="color: #003366">My</span>Bank 
+      <img src="card1.jpg" alt=" "></div>
+    <div class="customer-service">
+      Customer Service<br>
+      +63 912 345 6789
+    </div>
+  </div>
+
+  <div class="content">
+    <h1 style="color: #FC5E02;font-weight: 800;font-style: normal;font-size: 100px;line-height: 100%;letter-spacing: 0;">Welcome to </h1> 
+    <span style="color: #FC5E02;  font-weight: 800;top: 60px;font-size: 100px;line-height: 100%;letter-spacing: 0;">MyBank <img src="card2.png" alt=" " style="width:150px;height:90px;"></span> 
+    <p style="width: 558;height: 130;top: 580px;left: 128px;opacity: 1;font-weight: 600;font-style: SemiBold;font-size: 48px;line-height: 100%;letter-spacing: 0%;">Please tap your bank card to continue</p>
+    <button class="btn">Tap Card</button>
+
+    <!-- Bank icon -->
+    <img src="bank.png" style="width: 300px; height: 600px; opacity: 1; top: 580px; left: 128px; border-radius: 15px;"></div>
+
+</body>
+</html>
