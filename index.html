@@ -1,109 +1,183 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
-  <meta charset="UTF-8">
-  <title>ATM Welcome</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans';
-    }
-    .header {
-      background-color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      border-bottom: 2px solid #ddd;
-    }
-    .logo {
-      font-size: 60px;
-      font-weight: bold;
-      color: #FC5E02;
-    }
-    .logo span {
-      color: #FC5E02; 
-      width: 305px;
-      height: 89px;
-      top: 40px;
-      left: 53px;
-      opacity: 1;
-    }
-    .logo img {
-      width: 100px; 
-      height: 69px; 
-      top: 50px; 
-      left: 330px; 
-      color: #124191;
-      vertical-align: middle;
-    }
-    .customer-service {
-      font-size: 20px;
-      color: #003366;
-      text-align: right;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBank ATM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="balance.css">
+    <link rel="stylesheet" href="withdraw.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .content {
-      background-color: #003d99; /* deep blue */
-      color: white;
-      height: calc(100vh - 50px);
-      padding: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      position: relative;
-    }
+    <!-- Open Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    .content h1 {
-      margin: 0;
-    }
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
-    .content h1 span {
-      font-size: 80px;
-    }
-
-    .content p {
-      font-size: 18px;
-      margin: 10px 0 30px 0;
-    }
-
-    .btn {
-      background-color: white;
-      color: #003366;
-      font-size: 18px;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .btn:hover {
-      background-color: #f2f2f2;
-    }
-  </style>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="atm">
+        <div class="header">
+          <div class="logo">
+            <span class="my">My</span><span class="bank">Bank</span>
+            <i class="bi bi-credit-card"></i>
+          </div>
+          <div class="service">
+            <span class="title">Customer Service</span><br>
+            <span class="number">+63 912 345 6789</span>
+          </div>
+        </div>
 
-  <div class="header">
-    <div class="logo">
-      <span style="color: #003366">My</span>Bank 
-      <img src="card1.jpg" alt=" "></div>
-    <div class="customer-service">
-      Customer Service<br>
-      +63 912 345 6789
+        <div id="screen-insert" class="screen active">
+            <p class="screen-title">Welcome to <br> MyBank <i class="bi bi-credit-card"></i></p>
+            <p>Please insert your bank <br> card to continue</p>
+            <i class="bi bi-bank"></i>
+            <button id="insert-card">Insert Card</button>
+        </div>
+
+        <div id="screen-pin" class="screen">
+        <p class="screen-PIN">Enter PIN</p>
+            <input type="text" id="pin-input" readonly>
+            <div class="keypad">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="clear">C</button>
+                <button class="key">0</button>
+                <button id="enter-pin" class="enter">Enter</button>
+            </div>
+        </div>
+
+        <div id="screen-menu" class="screen">
+        <p class="screen-trans">Choose a Transaction</p>
+            <p class="menu-note">Press Logout to exit</p>
+            <div class="options">
+                <button id="check-balance">Check Balance</button>
+                <button id="withdraw">Withdraw</button>
+                <button id="deposit">Deposit</button>
+                <button id="check-history">Check History</button>
+            </div>
+            <button id="logout" class="logout">Logout</button>
+        </div>
+
+        <div id="screen-balance" class="screen">
+            <p class="screen-bal">Available Balance</p>
+            <div class="balance-info">
+              <div class="info-row">
+                <label>Account Number:</label>
+                <span class="answer-box">XXXXXXXX1234</span>
+              </div>
+              <div class="info-row">
+                <label>Available Balance:</label>
+                <span class="answer-box">₱12,500.00</span>
+              </div>
+            </div>
+            <button id="back-to-menu" class="back">Back</button>
+        </div>
+
+        <div id="screen-withdraw-amount" class="screen">
+            <button id="back-from-withdraw" class="back-small">Back</button>
+            <p class="screen-with">Enter the amount you want to withdraw</p>
+            <input type="text" id="amount-input" readonly placeholder="₱ 0.00">
+            <div class="keypad">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="clear">C</button>
+                <button class="key">0</button>
+                <button id="confirm-amount" class="enter">Enter</button>
+            </div>
+        </div>
+
+        <div id="screen-withdraw-summary" class="screen">
+           <p class="screen-sum">Transaction Summary</p>
+            <div class="balance-in">
+              <div class="in-row">
+                <label>Account Number:</label>
+                <span class="ansbox">XXXXXXXX1234</span>
+              </div>
+              <div class="in-row">
+                <label>Withdrawal Amount:</label>
+                <span id="withdrawal-display" class="ansbox">₱1,000.00</span>
+              </div>
+              <div class="in-row">
+                <label>Remaining Balance:</label>
+                <span id="remaining-display" class="ansbox">₱11,500.00</span>
+              </div>
+            </div>
+              <div class="summary-buttons">
+                <button id="cancel-withdraw" class="cancel">Cancel</button>
+                <button id="confirm-withdraw" class="confirm">Confirm</button>
+              </div>
+            </div>
+        </div>
+        
+        <!-- Add this after the withdraw summary screen -->
+        <div id="screen-deposit-amount" class="screen">
+            <button id="back-from-deposit" class="back-small">Back</button>
+            <p class="screen-deposit">Enter the amount you want to deposit</p>
+            <input type="text" id="deposit-amount-input" readonly placeholder="₱ 0.00">
+            <div class="keypad">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="clear">C</button>
+                <button class="key">0</button>
+                <button id="confirm-deposit-amount" class="enter">Enter</button>
+            </div>
+        </div>
+
+        <div id="screen-deposit-confirm" class="screen">
+            <p class="screen-deposit-confirm">Please insert <span id="deposit-amount-display">₱0.00</span> to the deposit slot</p>
+            <div class="deposit-buttons">
+                <button id="cancel-deposit" class="cancel">Cancel</button>
+                <button id="confirm-deposit" class="confirm">Confirm</button>
+            </div>
+        </div>
+
+        <div id="screen-deposit-summary" class="screen">
+            <p class="screen-sum">Transaction Summary</p>
+            <div class="balance-in">
+              <div class="in-row">
+                <label>Account Number:</label>
+                <span class="ansbox">XXXXXXXX1234</span>
+              </div>
+              <div class="in-row">
+                <label>Deposited Amount:</label>
+                <span id="deposited-display" class="ansbox">₱0.00</span>
+              </div>
+              <div class="in-row">
+                <label>New Balance:</label>
+                <span id="new-balance-display" class="ansbox">₱12,500.00</span>
+              </div>
+            </div>
+            <button id="back-to-menu-from-deposit" class="back">Back to Menu</button>
+        </div>
     </div>
-  </div>
-
-  <div class="content">
-    <h1 style="color: #FC5E02;font-weight: 800;font-style: normal;font-size: 100px;line-height: 100%;letter-spacing: 0;">Welcome to </h1> 
-    <span style="color: #FC5E02;  font-weight: 800;top: 60px;font-size: 100px;line-height: 100%;letter-spacing: 0;">MyBank <img src="card2.png" alt=" " style="width:150px;height:90px;"></span> 
-    <p style="width: 558;height: 130;top: 580px;left: 128px;opacity: 1;font-weight: 600;font-style: SemiBold;font-size: 48px;line-height: 100%;letter-spacing: 0%;">Please tap your bank card to continue</p>
-    <button class="btn">Tap Card</button>
-
-    <!-- Bank icon -->
-    <img src="bank.png" style="width: 300px; height: 600px; opacity: 1; top: 580px; left: 128px; border-radius: 15px;"></div>
-
+    <script src="script.js"></script>
 </body>
 </html>

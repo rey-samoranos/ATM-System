@@ -1,0 +1,424 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    display: flex;
+    margin: 0;
+}
+
+
+.atm-container {
+    width: 1500px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.logo{
+    font-size: 35px;
+}
+
+.logo .my {
+  color: #124191; /* blue */
+  font-weight: bold;
+}
+
+.logo .bank {
+  color: #FC5E02; /* orange */
+  font-weight: bold;
+}
+
+
+.bi-credit-card {
+  font-size: 35px;       /* change size */
+  color: #124191;        /* blue color */
+  margin-left: 5px;      /* spacing from text */
+  vertical-align: middle; /* align with text */
+}
+
+.service {
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
+}
+
+.service .title {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #FFFFFF;
+  color: #124191; /* dark blue */
+}
+
+.service .number {
+  font-size: 15px;
+  font-weight: 500;
+  color: #124191; /* slightly lighter */
+  display: block;
+}
+
+.title {
+    background-color: #124191;
+    color: #fd7e14;
+    text-align: left;
+    margin: 0 0 10px 0;
+}
+.screen-title{
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-family: 'Open Sans' !important;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+.screen-title .bi-credit-card{
+    font-size: 60px;       /* change size */
+    color: #fff;        
+}
+p {
+    text-align: left;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-top: -30px;
+    color: #FFFFFF;
+}
+
+.bi-bank {
+    font-size: 230px;       /* make it big like a logo */
+    color: #fff;        /* bank blue */
+    position: absolute ;    /* take it out of normal flow */
+    top: 100px;             /* distance from the top */
+    right: 200px;  
+}
+
+
+.action-button {
+    display: block;       /* makes it take its own line */
+    float: right;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 250px;
+    height: 60px;
+    margin-right: 170px;
+    margin-top: -10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    background: #fff;  /* example color */
+    color: #124191;
+}
+
+.title-PIN {
+    background-color: #124191;
+    color: #fd7e14;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+.input-field {
+    background-color: white;
+    color: #124191;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    height: 15px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top:20px;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.keypad button {
+    background-color: white;
+    color: #124191;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.keypad .clear {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.keypad .enter {
+    background-color: white;
+    color: #124191;
+}
+
+.title-trans {
+    text-align: left;
+    margin-left: 25px;
+    margin-top: -20px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+.instruction {
+    text-align: left;
+    margin-left: 25px;
+    margin-top: -35px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    background-color: #fff;
+    color: #124191;
+    font-size: 20px;
+    font-weight: 700;
+    height: 90px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout {
+    background-color: #FC5E02;
+    color: #fff;
+    float: right;
+    width: 480px;
+    font-size: 20px !important;
+    font-weight: 700;
+    height: 90px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.title-bal {
+    text-align: center;
+    margin-left: 25px;
+    margin-top: -20px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+.label {
+    font-size: 23px;
+    text-align: center;
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.label {
+    font-size: 25px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    font-weight: bold;
+}
+
+.field {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color:#124191;
+    font-weight: 600;
+    min-width: 470px;   /* keeps box same width */
+    text-align: center;
+    margin-bottom: 10px ;
+    font-size: 20px;
+
+}
+
+.back {
+    background-color: #FC5E02;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 520px;
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 220px;
+    border-radius: 5px;
+}
+
+.title-with {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: -10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+
+.back-d {
+    background-color: #FC5E02;
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    width: 310px;
+    float: right;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.title-sum {
+    text-align: center;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+.confirm-cancel {
+    float: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.confirm-cancel button {
+    width: 250px;
+    height: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}
+
+.confirm {
+    background-color: #FC5E02;
+    color: #fff;
+}
+
+.cancel {
+    background-color: #fff;
+    color: #124191;
+}
+
+.message {
+    background-color: white;
+    color: #FC5E02;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 20px;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+.confirm-c {
+    float: right;
+    margin-top: -5px;
+    margin-right:25px;
+    gap: 10px;
+}
+
+.confirm-c button {
+    width: 250px;
+    height: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.history-table th, .history-table td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+.history-table th {
+    background-color: #FC5E02;
+    color: white;
+}
+
+.history-table td {
+    background-color: white;
+    color: #124191;
+}
+
+
+.screen {
+    display: none;
+    display: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #124191;
+    height: 420px;
+}
+
+.screen.active {
+    display: block;
+}

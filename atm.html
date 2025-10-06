@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBank ATM Simulator</title>
+    <link rel="stylesheet" href="design.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Open Sans from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+    <body>
+        <div class="atm-container">
+            <!-- Header common to all screens -->
+            <div class="header">
+                <div class="logo">
+                    <span class="my">My</span><span class="bank">Bank</span>
+                    <i class="bi bi-credit-card"></i>
+                </div>
+                <div class="service">
+                    <span class="title">Customer Service</span><br>
+                    <span class="number">+63 912 345 6789</span>
+                </div>
+         </div>
+
+            <!-- Screen 1: Welcome -->
+            <div id="screen-insert" class="screen active">
+                <p class="screen-title">Welcome to <br> MyBank <i class="bi bi-credit-card"></i></p>
+                <p>Please insert your bank <br> card to continue</p>
+                <i class="bi bi-bank"></i>
+                <button class="action-button" onclick="goToScreen('pin')">Insert Card</button>
+            </div>
+
+            <!-- Screen 2: Enter PIN -->
+            <div id="pin" class="screen">
+                <h2 class="title-PIN">Enter PIN</h2>
+                <div id="pin-input" class="input-field"></div>
+                <div class="keypad">
+                    <button onclick="appendPin('1')">1</button>
+                    <button onclick="appendPin('2')">2</button>
+                    <button onclick="appendPin('3')">3</button>
+                    <button onclick="appendPin('4')">4</button>
+                    <button onclick="appendPin('5')">5</button>
+                    <button onclick="appendPin('6')">6</button>
+                    <button onclick="appendPin('7')">7</button>
+                    <button onclick="appendPin('8')">8</button>
+                    <button onclick="appendPin('9')">9</button>
+                    <button class="clear" onclick="clearPin()">C</button>
+                    <button onclick="appendPin('0')">0</button>
+                    <button class="enter" onclick="submitPin()">Enter</button>
+                </div>
+            </div>
+
+            <!-- Screen 3: Main Menu -->
+            <div id="main-menu" class="screen">
+                <h2 class="title-trans">Choose a Transaction</h2>
+                <p class="instruction">Press Logout to exit</p>
+                <div class="buttons">
+                    <button onclick="goToScreen('balance')">Check Balance</button>
+                    <button onclick="goToScreen('withdraw-amount')">Withdraw</button>
+                    <button onclick="goToScreen('deposit-amount')">Deposit</button>
+                    <button onclick="goToScreen('history')">Check History</button>
+                </div>
+                <button class="logout" onclick="goToScreen('screen-insert')">Logout</button>
+            </div>
+
+            <!-- Screen 4: Check Balance -->
+            <div id="balance" class="screen">
+                <h2 class="title-bal">Available Balance</h2>
+                <div class="label">Account Number:</div>
+                <div id="account-number" class="field">XXXXXXXX1234</div>
+                <div class="label">Available Balance:</div>
+                <div id="available-balance" class="field">₱ 12,500.00</div>
+                <button class="back" onclick="goToScreen('main-menu')">Back</button>
+            </div>
+
+            <!-- Screen 5: Withdraw Amount -->
+            <div id="withdraw-amount" class="screen">
+                <h2 class="title-with">Enter the amount you want to withdraw</h2>
+                <div id="withdraw-input" class="input-field"></div>
+                <div class="keypad">
+                    <button onclick="appendAmount('1', 'withdraw')">1</button>
+                    <button onclick="appendAmount('2', 'withdraw')">2</button>
+                    <button onclick="appendAmount('3', 'withdraw')">3</button>
+                    <button onclick="appendAmount('4', 'withdraw')">4</button>
+                    <button onclick="appendAmount('5', 'withdraw')">5</button>
+                    <button onclick="appendAmount('6', 'withdraw')">6</button>
+                    <button onclick="appendAmount('7', 'withdraw')">7</button>
+                    <button onclick="appendAmount('8', 'withdraw')">8</button>
+                    <button onclick="appendAmount('9', 'withdraw')">9</button>
+                    <button class="clear" onclick="clearAmount('withdraw')">C</button>
+                    <button onclick="appendAmount('0', 'withdraw')">0</button>
+                    <button class="enter" onclick="submitWithdrawAmount()">Enter</button>
+                </div>
+                <button class="back-d" onclick="goToScreen('main-menu')">Back</button>
+            </div>
+
+            <!-- Screen 5.1: Withdraw Summary -->
+            <div id="withdraw-summary" class="screen">
+                <h2 class="title-sum">Transaction Summary</h2>
+                <div class="label">Account Number:</div>
+                <div class="field">XXXXXXXX1234</div>
+                <div class="label">Withdrawal Amount:</div>
+                <div id="withdraw-amount-summary" class="field"></div>
+                <div class="label">Remaining Balance:</div>
+                <div id="remaining-balance" class="field"></div>
+                <div class="confirm-cancel">
+                    <button class="confirm" onclick="confirmWithdraw()">Confirm</button>
+                    <button class="cancel" onclick="goToScreen('main-menu')">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Screen 6: Deposit Amount -->
+            <div id="deposit-amount" class="screen">
+                <h2 class="title-with">Enter the amount you want to deposit</h2>
+                <div id="deposit-input" class="input-field"></div>
+                <div class="keypad">
+                    <button onclick="appendAmount('1', 'deposit')">1</button>
+                    <button onclick="appendAmount('2', 'deposit')">2</button>
+                    <button onclick="appendAmount('3', 'deposit')">3</button>
+                    <button onclick="appendAmount('4', 'deposit')">4</button>
+                    <button onclick="appendAmount('5', 'deposit')">5</button>
+                    <button onclick="appendAmount('6', 'deposit')">6</button>
+                    <button onclick="appendAmount('7', 'deposit')">7</button>
+                    <button onclick="appendAmount('8', 'deposit')">8</button>
+                    <button onclick="appendAmount('9', 'deposit')">9</button>
+                    <button class="clear" onclick="clearAmount('deposit')">C</button>
+                    <button onclick="appendAmount('0', 'deposit')">0</button>
+                    <button class="enter" onclick="submitDepositAmount()">Enter</button>
+                </div>
+                <button class="back-d" onclick="goToScreen('main-menu')">Back</button>
+            </div>
+
+            <!-- Screen 6.1: Deposit Insert -->
+            <div id="deposit-insert" class="screen">
+                <div class="message" id="deposit-message">Please insert ₱ 0.00 into the deposit slot</div>
+                <div class="confirm-c">
+                    <button class="confirm" onclick="prepareDepositSummary()">Confirm</button>
+                    <button class="cancel" onclick="goToScreen('main-menu')">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Screen 6.2: Deposit Summary -->
+            <div id="deposit-summary" class="screen">
+                <h2 class="title-sum">Transaction Summary</h2>
+                <div class="label">Account Number:</div>
+                <div class="field">XXXXXXXX1234</div>
+                <div class="label">Deposit Amount:</div>
+                <div id="deposit-amount-summary" class="field"></div>
+                <div class="label">New Balance:</div>
+                <div id="new-balance" class="field"></div>
+                <div class="confirm-cancel">
+                    <button class="confirm" onclick="confirmDeposit()">Confirm</button>
+                    <button class="cancel" onclick="goToScreen('main-menu')">Cancel</button>
+                </div>
+            </div>
+
+            <!-- Screen 7: History -->
+            <div id="history" class="screen">
+                <h2 class="title-with">Recent Transaction History</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                <button class="back-d" onclick="goToScreen('main-menu')">Back</button>
+            </div>
+        </div>
+       <script src="soft.js"></script>
+ </body>
+</html>

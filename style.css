@@ -1,0 +1,267 @@
+/* style.css */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #fff;
+    display: flex;
+    margin: 0;
+}
+
+#atm {
+    width: 1200px;
+    border: 1px solid #000;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.logo{
+    font-size: 30px;
+}
+
+.logo .my {
+  color: #124191; /* blue */
+  font-weight: bold;
+}
+
+.logo .bank {
+  color: #FC5E02; /* orange */
+  font-weight: bold;
+}
+
+
+.bi-credit-card {
+  font-size: 35px;       /* change size */
+  color: #124191;        /* blue color */
+  margin-left: 5px;      /* spacing from text */
+  vertical-align: middle; /* align with text */
+}
+
+
+.service {
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
+}
+
+.service .title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #124191; /* dark blue */
+}
+
+.service .number {
+  font-size: 15px;
+  font-weight: 500;
+  color: #124191; /* slightly lighter */
+  display: block;
+}
+
+
+.screen {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #124191;
+    color: #fff;
+    height: 420px;
+}
+
+.screen.active {
+    display: block;
+}
+
+.screen-title{
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 5px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+.screen-title .bi-credit-card{
+    font-size: 60px;       /* change size */
+    color: #fff;        
+}
+p {
+    text-align: left;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    margin-left: 100px;
+    margin-top: -30px;
+    color: #FFFFFF;
+}
+
+.bi-bank {
+    font-size: 200px;       /* make it big like a logo */
+    color: #fff;        /* bank blue */
+    position: absolute ;    /* take it out of normal flow */
+    top: 100px;             /* distance from the top */
+    right: 200px;  
+}
+.screen-PIN{
+   color: #ff6600;
+    margin: 10px 0; 
+}
+button {
+    padding: 10px 20px; 
+    margin: 5px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 14px;
+}
+
+#insert-card {
+    display: block;       /* makes it take its own line */
+    margin-left: auto;    /* pushes it to the right */
+    margin-right: 180px;   /* space from the right edge */
+    margin-top: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 190px;
+    height: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    background: #fff;  /* example color */
+    color: #124191;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+#insert-card:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35); 
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top:20px;
+    justify-content: center;
+    border-radius: 5px;
+    
+}
+
+.keypad button {
+    background-color: #fff;
+    color: #124191;
+    font-size: 20px;
+    font-weight: 700;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.keypad button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);    /* smaller shadow */
+}
+
+.clear {
+    background-color: #ff6600 !important;
+    color: #fff !important;
+}
+
+.enter {
+    background-color: #fff;
+    color: #000;
+}
+
+#pin-input {
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.screen-trans {
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 5px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+.menu-note {
+    text-align: left;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    margin-left: 25px;
+    margin-top: -60px;
+    color: #FFFFFF;
+}
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.options button {
+    background-color: #fff;
+    color: #124191;
+    font-size: 20px;
+    font-weight: 700;
+    height: 90px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+.options button:active{
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);  
+}
+.logout {
+    background-color: #FC5E02;
+    color: #fff;
+    float: right;
+    width: 190px;
+    height: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.logout:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);  
+}
+

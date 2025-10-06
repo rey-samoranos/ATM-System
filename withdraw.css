@@ -1,0 +1,114 @@
+/* withdraw.css */
+.screen-with {
+    margin-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 35px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+
+#amount-input {
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color: #fff;
+    color: #124191;
+    border: none;
+    margin-top:-110px;
+    border-radius: 5px;
+}
+
+
+#amount-input::placeholder {
+  color: #124191;
+  font-weight: normal;
+}
+
+
+.screen-sum {
+    text-align: center;
+    margin-left: 25px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 35px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+.balance-in{
+    margin-top: -20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.in-row {
+  font-size: 17px;
+  text-align: center; /* center label + box */
+}
+
+.in-row label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.ansbox {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color:#124191;
+  font-weight: 600;
+  min-width: 320px;   /* keeps box same width */
+  text-align: center; /* centers text inside */
+}
+.summary-buttons {
+    float: right;
+    margin-top: 30px;
+    gap: 10px;
+    width: 50%;
+}
+.summary-buttons .cancel {
+    background-color: #fff;
+    color: #124191;
+    width: 190px;
+    height: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+.summary-buttons .cancel:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);  
+}
+.summary-buttons .confirm {
+    background-color: #FC5E02;
+    color: #fff;
+    width: 190px;
+    height: 50px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.summary-buttons .confirm:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);  
+}

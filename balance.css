@@ -1,0 +1,76 @@
+/* balance.css */
+.screen-bal {
+    margin-left: 25px;
+    margin-top: 5px;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 80px;
+    color: #FC5E02;
+}
+.balance-info {
+    margin-top: -60px;
+    margin-bottom: 40PX;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.info-row {
+  font-size: 23px;
+  text-align: center; /* center label + box */
+}
+
+.info-row label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.answer-box {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color:#124191;
+  font-weight: 600;
+  min-width: 250px;   /* keeps box same width */
+  text-align: center; /* centers text inside */
+}
+
+
+.back {
+    margin-top: -20px;
+    background-color: #FC5E02;
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.back:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.35);  
+}
+
+.back-small {
+    position: absolute;
+    left: 20px;
+    background-color: #fff;
+    color: #124191;
+    padding: 8px 12px;
+    font-size: 12px;
+    border-radius: 5px;
+    font-weight: 700;
+    z-index: 10;
+}
